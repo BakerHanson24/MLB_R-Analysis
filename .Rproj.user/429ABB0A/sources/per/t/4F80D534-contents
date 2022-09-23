@@ -1,0 +1,178 @@
+## ---- Conditionals and Control Flow ------ ##
+
+TRUE == FALSE           #FALSE
+
+(-6*14) != (17-101)     #FALSE
+
+"useR" == "user"        #FALSE
+
+TRUE == 1               #TRUE
+
+#---------------
+
+-6*5+2 >= -10+1         #FALSE
+
+"raining" <= "raining dogs"   #TRUE
+  #above, compares lengths of strings
+
+TRUE > FALSE            #TRUE
+
+## -----------------
+linkedin <- c(16,9,13,5,2,17,14)
+facebook <- c(17,7,5,16,8,13,14)
+
+#popular days
+linkedin > 15   # returns logical Vector
+
+#quiet days
+linkedin <= 5   # returns logical vector
+
+#linkedin more popular than facebook
+linkedin > facebook   # returns logical vector
+
+soc_media <- data.frame(linkedin,facebook)
+soc_media
+
+weekdays <- c("Sun","Mon","Tues","Wed","Thurs","Fri","Sat")
+rownames(soc_media) <- weekdays
+soc_media
+
+diff <- linkedin - facebook
+diff
+
+
+# create matrix
+views <- matrix(c(linkedin,facebook), byrow = TRUE, nrow = 2,
+                dimnames = list(c("LinkedIn","Facebook"),weekdays))
+views
+
+# when does views equal 13, or <= 14?
+views == 13
+views <= 14
+  # above: both return logical matrices
+
+
+
+## -----------------------------------------------
+## Logical Operators ##
+
+last <- tail(linkedin,1) #opposite of head()
+
+last < 5 | last > 10   # returns boolean
+
+last >= 15 & last <= 20   # returns boolean
+
+
+linkedin > 10 & facebook < 10  # boolean vector
+linkedin >= 12 | facebook >= 12   # boolean vector
+
+views > 11 & views <= 14   # boolean matrix
+
+# ---  brief logic quiz ---
+x <- 5
+y <- 7
+!(!(x < 4) & !!!(y > 12))
+#  !(   TRUE      &    TRUE ) == FALSE
+  # me-sah is correct!!  Thank You Jesus :)
+
+
+
+## ------ CONDITIONAL STATEMENTS -------- ##
+
+if(condition) {
+  expression
+}    #basic syntax
+
+
+medium <- "LinkedIn"
+num_views <- 14
+
+if(medium == "LinkedIn") {
+  print("Showing LinkedIn information")
+}
+
+if(num_views > 15) {
+  print("You are popular!")
+}
+
+
+if(medium == "LinkedIn") {
+  print("Showing LinkedIn information")
+} else {
+  print("Unknown medium")
+}
+
+if(medium == "LinkedIn") {
+  print("Showing LinkedIn information")
+} else if (medium == "Facebook") {
+  print("Showing Facebook information")
+} else {
+  print("Unknown medium")
+}
+
+
+if (num_views > 15) {
+  print("You're popular!")
+} else if (num_views <= 15 & num_views > 10) {
+  print("Your number of views is average")
+} else {
+  print("Try to be more visible!")
+}
+
+
+
+# gettin' wild with else if
+
+number <- 90
+if(number < 10) {
+  if(number < 5){
+    result <- "extra small"
+  } else {
+    result <- "small"
+  }
+} else if (number < 100) {
+  result <- "medium"
+} else {
+  result <- "large"
+}
+
+result
+
+## another way:
+number <- 105
+if(number < 100) {
+  result <- "medium"
+} else if (number < 10) {
+  result <- "small"
+} else if (number < 5) {
+  result <- "extra small"
+} else {
+  result <- "large"
+}
+
+result
+
+
+## go with the flow
+
+li <- 15
+fb <- 9
+
+if(li >= 15 & fb >=15) {
+  sms <- 2*(li + fb)
+} else if (li < 10 & fb < 10) {
+  sms <- 0.5*(li + fb)
+} else {
+  sms <- li + fb
+}
+
+sms
+
+
+
+
+
+
+
+
+

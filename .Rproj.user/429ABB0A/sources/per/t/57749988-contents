@@ -1,0 +1,106 @@
+## ------- LOOPS! --------- ##
+
+# -------- WHILE LOOP ----- #
+speed <- 64
+
+while(speed > 30) {
+  print(speed)
+  print("Slow down!")
+  speed <- speed - 7
+}
+
+speed
+
+
+# more conditions
+
+speed <- 64
+
+while(speed > 30) {
+  print(paste("Your speed is",speed))
+  if(speed > 48) {
+    print("Slow down big time!")
+    speed <- speed - 11
+  } else {
+    print("Slow down!")
+    speed <- speed - 6
+  }
+}
+
+
+## add in BREAKs ##
+
+speed <- 79
+
+while(speed > 30) {
+  print(paste("Your speed is",speed))
+  if(speed > 80) {
+    break
+  }
+  if(speed > 48) {
+    print("Slow down big time!")
+    speed <- speed - 11
+  } else {
+    print("Slow down!")
+    speed <- speed -6
+  }
+}
+
+
+## build a WHILE LOOP from scratch! ##
+
+i <- 1
+while(1 <= 10) {
+  print(3 * i)
+  if((3 * i) %% 8 == 0) {
+    break
+  }
+  i <- i + 1
+}
+
+
+
+## ----- FOR LOOP ---- #
+
+linkedin
+# version 1
+for (l in linkedin) {
+  print(l)
+}
+# version 2
+for (l in 1:length(linkedin)) {
+  print(linkedin[l])
+}
+
+
+nyc <- list(pop = 8405837,
+            boroughs = c("Manhattan","Bronx","Brooklyn",
+                         "Queens","Staten Island"),
+            capital = FALSE)
+nyc
+
+#Loop Version 1
+for (n in nyc) {
+  print(n)
+}
+
+
+
+## nested loop over a Matrix ##
+
+ttt_matrix <- matrix(c("O",NA,"X",
+                       NA,"O","O",
+                       "X",NA,"X"), byrow = T, nrow = 3)
+ttt_matrix
+
+
+for (i in 1:nrow(ttt)) {
+  for (j in 1:ncol(ttt)) {
+    print(paste("On row i and column j the board contains",
+                ))
+  }
+}
+
+
+
+
